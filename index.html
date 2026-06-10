@@ -3,34 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nyvrix | Futuristic Commerce for Next-Gen Tech</title>
-  <meta name="description" content="Nyvrix is a premium futuristic eCommerce marketplace for smart devices, tech gadgets, and innovation-driven lifestyle products." />
+  <title>Nyvrix | Adaptive Luxury Intelligence</title>
+  <meta name="description" content="Nyvrix is a luxury AI-powered lifestyle ecosystem where intelligent products transform how you live, adapt, and experience premium comfort." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f8fbff;
-      --surface: rgba(255, 255, 255, 0.72);
-      --surface-strong: rgba(255, 255, 255, 0.92);
-      --surface-soft: rgba(241, 245, 249, 0.8);
-      --text: #0f172a;
-      --muted: #5b6478;
-      --line: rgba(148, 163, 184, 0.24);
-      --ice: #60a5fa;
-      --cyan: #22d3ee;
-      --violet: #a78bfa;
-      --silver: #cbd5e1;
-      --shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
-      --shadow-soft: 0 18px 50px rgba(96, 165, 250, 0.14);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
-      --container: min(1180px, calc(100vw - 32px));
+      --black: #0B0C10;
+      --pearl: #F8F7F3;
+      --gold: #C8A96A;
+      --gold-soft: rgba(200, 169, 106, 0.35);
+      --gold-muted: rgba(200, 169, 106, 0.12);
+      --platinum: #D1D5DB;
+      --navy: #1E2A38;
+      --navy-light: #2a3a4d;
+      --text-muted: rgba(248, 247, 243, 0.62);
+      --text-dark-muted: #6b7280;
+      --container: min(1200px, calc(100vw - 48px));
+      --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
@@ -41,37 +37,11 @@
     body {
       margin: 0;
       font-family: "Inter", system-ui, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 30%),
-        radial-gradient(circle at 82% 18%, rgba(34, 211, 238, 0.18), transparent 24%),
-        radial-gradient(circle at 70% 76%, rgba(167, 139, 250, 0.16), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f7fbff 54%, #eef6ff 100%);
+      font-weight: 400;
+      color: var(--pearl);
+      background: var(--black);
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.3), transparent 68%);
-      opacity: 0.15;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: auto -10% -18% -10%;
-      height: 48vh;
-      background: radial-gradient(circle, rgba(96,165,250,0.14), transparent 60%);
-      filter: blur(30px);
-      z-index: -2;
-      pointer-events: none;
+      line-height: 1.7;
     }
 
     a {
@@ -79,1702 +49,1220 @@
       text-decoration: none;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     .container {
       width: var(--container);
       margin: 0 auto;
     }
 
-    .topbar {
-      position: sticky;
+    /* ── Typography ── */
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    /* ── Header ── */
+    .header {
+      position: fixed;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 255, 255, 0.65);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 22px 0;
+      background: linear-gradient(180deg, rgba(11, 12, 16, 0.96) 0%, rgba(11, 12, 16, 0) 100%);
+      transition: background 400ms var(--ease-luxury);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold-soft);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .logo-mark::after {
+      content: "N";
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .logo-text {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 0;
+      gap: 36px;
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-family: "Sora", sans-serif;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+    .nav a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      transition: color 300ms var(--ease-luxury);
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.55)),
-        linear-gradient(135deg, rgba(96,165,250,0.9), rgba(34,211,238,0.9));
-      border: 1px solid rgba(255,255,255,0.7);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-mark::before,
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      inset: 8px;
-      border-radius: 11px;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-    }
-
-    .brand-mark::after {
-      inset: 12px;
-      border-radius: 9px;
-      border-color: rgba(255,255,255,0.72);
-      background: linear-gradient(145deg, rgba(255,255,255,0.46), transparent);
-    }
-
-    .brand-copy span {
-      display: block;
-      font-size: 0.76rem;
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      color: #41506a;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--ice), var(--cyan));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 240ms ease;
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
+    .nav a:hover {
+      color: var(--pearl);
     }
 
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.96);
-      color: #fff;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+      padding: 11px 24px;
+      border: 1px solid var(--gold-soft);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: background 350ms var(--ease-luxury), color 350ms var(--ease-luxury);
     }
 
     .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 28px 65px rgba(15, 23, 42, 0.18);
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: var(--gold);
+      color: var(--black);
     }
 
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 400ms var(--ease-luxury), background 400ms var(--ease-luxury), border-color 400ms var(--ease-luxury), color 400ms var(--ease-luxury);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #d4b87a;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--pearl);
+      border: 1px solid rgba(248, 247, 243, 0.25);
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-soft);
+      color: var(--gold);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes revealLine {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .reveal {
+      animation: fadeUp 1.1s var(--ease-luxury) both;
+    }
+
+    .reveal-d1 { animation-delay: 0.15s; }
+    .reveal-d2 { animation-delay: 0.3s; }
+    .reveal-d3 { animation-delay: 0.45s; }
+    .reveal-d4 { animation-delay: 0.6s; }
+
+    /* ── Hero ── */
     .hero {
       position: relative;
-      padding: 48px 0 34px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: var(--black);
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .hero-glow-1 {
+      width: 600px;
+      height: 600px;
+      top: -10%;
+      right: -5%;
+      background: radial-gradient(circle, rgba(200, 169, 106, 0.08) 0%, transparent 70%);
+      animation: shimmer 8s ease-in-out infinite;
+    }
+
+    .hero-glow-2 {
+      width: 400px;
+      height: 400px;
+      bottom: 10%;
+      left: -8%;
+      background: radial-gradient(circle, rgba(30, 42, 56, 0.6) 0%, transparent 70%);
+    }
+
+    .hero-line {
+      position: absolute;
+      top: 50%;
+      right: 8%;
+      width: 1px;
+      height: 180px;
+      background: linear-gradient(180deg, transparent, var(--gold-soft), transparent);
+      transform-origin: top;
+      animation: revealLine 1.4s var(--ease-luxury) 0.8s both;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 34px;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
       align-items: center;
-      min-height: calc(100vh - 94px);
+      position: relative;
+      z-index: 1;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
-      color: #406088;
-      font-size: 0.92rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      width: fit-content;
+    .hero-content h1 {
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      max-width: 14ch;
+      margin-bottom: 28px;
     }
 
-    .eyebrow-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--ice), var(--cyan));
-      box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.14);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      margin: 0;
-      font-family: "Sora", sans-serif;
-      letter-spacing: -0.04em;
-      line-height: 0.98;
-    }
-
-    h1 {
-      font-size: clamp(3.4rem, 7vw, 6.8rem);
-      max-width: 10ch;
-      margin-top: 20px;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 58ch;
-      margin: 22px 0 0;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 15px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
-      border: 1px solid transparent;
-    }
-
-    .button-primary {
-      background: linear-gradient(135deg, #0f172a, #1e293b 52%, #334155);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .button-secondary {
-      background: rgba(255, 255, 255, 0.75);
-      border-color: rgba(148, 163, 184, 0.22);
-      color: var(--text);
-      backdrop-filter: blur(14px);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-metrics {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-
-    .metric {
-      min-width: 180px;
-      padding: 16px 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: 0 16px 50px rgba(15, 23, 42, 0.05);
-      backdrop-filter: blur(16px);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.2rem;
-      font-family: "Sora", sans-serif;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .hero-content p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 48ch;
+      margin: 0 0 40px;
+      line-height: 1.85;
     }
 
     .hero-visual {
       position: relative;
-      min-height: 700px;
-      display: grid;
-      place-items: center;
+      aspect-ratio: 4 / 5;
+      max-height: 620px;
+      background: linear-gradient(145deg, var(--navy) 0%, var(--black) 100%);
+      border: 1px solid rgba(200, 169, 106, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      overflow: hidden;
     }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(18px);
-      opacity: 0.85;
-      animation: drift 10s ease-in-out infinite;
-    }
-
-    .orb.one {
-      width: 240px;
-      height: 240px;
-      background: radial-gradient(circle, rgba(96,165,250,0.32), rgba(96,165,250,0.05) 65%, transparent 70%);
-      top: 6%;
-      left: 6%;
-    }
-
-    .orb.two {
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(34,211,238,0.28), rgba(34,211,238,0.04) 60%, transparent 68%);
-      bottom: 8%;
-      right: 5%;
-      animation-delay: -3s;
-    }
-
-    .device-stack {
-      position: relative;
-      width: min(540px, 100%);
-      aspect-ratio: 0.9;
-      display: grid;
-      place-items: center;
-    }
-
-    .glass-panel {
-      position: absolute;
-      inset: auto;
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.52));
-      border: 1px solid rgba(255,255,255,0.7);
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.8);
-      backdrop-filter: blur(18px);
-    }
-
-    .device-main {
-      width: 76%;
-      height: 80%;
-      transform: translateY(12px);
-      animation: float 7s ease-in-out infinite;
-    }
-
-    .device-main::before {
+    .hero-visual::before {
       content: "";
       position: absolute;
-      inset: 16px;
-      border-radius: 26px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,248,255,0.76)),
-        linear-gradient(180deg, rgba(96,165,250,0.22), rgba(34,211,238,0.08));
-      border: 1px solid rgba(148, 163, 184, 0.16);
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 30%, rgba(200, 169, 106, 0.1) 0%, transparent 55%);
+      animation: shimmer 10s ease-in-out infinite;
     }
 
-    .device-main::after {
-      content: "Nyvrix One";
-      position: absolute;
-      top: 26px;
-      left: 26px;
-      font-family: "Sora", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #334155;
+    .hero-visual-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-visual-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      font-size: 0.74rem;
+      color: var(--gold);
+      margin-bottom: 12px;
     }
 
-    .screen {
+    .hero-visual-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--pearl);
+      max-width: 22ch;
+      line-height: 1.4;
+    }
+
+    .hero-object {
       position: absolute;
-      inset: 88px 26px 26px;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 22% 20%, rgba(96,165,250,0.26), transparent 20%),
-        radial-gradient(circle at 78% 26%, rgba(34,211,238,0.2), transparent 24%),
-        linear-gradient(160deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.86));
-      overflow: hidden;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-    }
-
-    .screen::before {
-      content: "";
-      position: absolute;
-      inset: -30% 8% auto;
-      height: 45%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent);
-      transform: rotate(-10deg);
-    }
-
-    .screen-top {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      right: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,0.78);
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-    }
-
-    .pill-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    .pill-row span {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.9), rgba(34,211,238,0.85));
-      box-shadow: 0 0 0 5px rgba(255,255,255,0.04);
-    }
-
-    .screen-title {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 24px;
-      color: #fff;
-    }
-
-    .screen-title strong {
-      display: block;
-      font-family: "Sora", sans-serif;
-      font-size: 1.65rem;
-      letter-spacing: -0.05em;
-    }
-
-    .screen-title span {
-      display: block;
-      margin-top: 6px;
-      color: rgba(255,255,255,0.74);
-      font-size: 0.96rem;
-      line-height: 1.6;
-      max-width: 24ch;
-    }
-
-    .floating-card {
-      position: absolute;
-      padding: 16px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.84);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow-soft);
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .floating-card.top {
-      top: 8%;
-      right: -3%;
-      width: 190px;
-      animation-delay: -2s;
-    }
-
-    .floating-card.bottom {
-      bottom: 12%;
-      left: -2%;
-      width: 214px;
-      animation-delay: -4s;
-    }
-
-    .card-chip {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.92), rgba(34,211,238,0.85));
-      box-shadow: 0 10px 26px rgba(96,165,250,0.18);
-    }
-
-    .floating-card h4 {
-      font-size: 1rem;
-      margin-top: 12px;
-      margin-bottom: 8px;
-    }
-
-    .floating-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.92rem;
-    }
-
-    .section {
-      padding: 94px 0 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 30px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(2rem, 3vw, 3.35rem);
-      max-width: 12ch;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 54ch;
-      margin: 0;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
-    }
-
-    .product-card {
-      grid-column: span 4;
-      padding: 20px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(241,245,249,0.74));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-      transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
-      border-color: rgba(96, 165, 250, 0.22);
-    }
-
-    .product-image {
-      height: 260px;
-      border-radius: 24px;
-      position: relative;
-      background:
-        radial-gradient(circle at 30% 26%, rgba(255,255,255,0.96), transparent 28%),
-        radial-gradient(circle at 72% 18%, rgba(34,211,238,0.22), transparent 22%),
-        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(230,244,255,0.72));
-      border: 1px solid rgba(255,255,255,0.84);
-      overflow: hidden;
-    }
-
-    .product-image::before,
-    .product-image::after {
-      content: "";
-      position: absolute;
-      inset: auto;
-      border-radius: 999px;
-    }
-
-    .product-image::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
       width: 180px;
       height: 180px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.28), rgba(34,211,238,0.18));
-      left: -16px;
-      bottom: -36px;
-      filter: blur(2px);
+      border-radius: 50%;
+      border: 1px solid var(--gold-soft);
+      background: radial-gradient(circle at 35% 35%, rgba(200, 169, 106, 0.12), transparent 60%);
     }
 
-    .product-image::after {
-      width: 160px;
-      height: 160px;
-      right: -28px;
-      top: -28px;
-      background: linear-gradient(135deg, rgba(167,139,250,0.18), rgba(96,165,250,0.18));
+    .hero-object::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 169, 106, 0.2);
     }
 
-    .product-body {
-      padding-top: 18px;
+    /* ── Sections (shared) ── */
+    .section {
+      padding: 120px 0;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .section-light {
+      background: var(--pearl);
+      color: var(--black);
+    }
+
+    .section-dark {
+      background: var(--black);
+    }
+
+    .section-navy {
+      background: var(--navy);
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-header.center {
+      text-align: center;
+    }
+
+    .section-header.center .section-header-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      max-width: 18ch;
+    }
+
+    .section-header.center h2 {
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    .section-header-desc {
+      margin: 20px 0 0;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 52ch;
+      line-height: 1.85;
+    }
+
+    .section-light .section-header-desc {
+      color: var(--text-dark-muted);
+    }
+
+    /* ── Collections ── */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .collection-card {
+      padding: 36px 32px;
+      background: rgba(30, 42, 56, 0.4);
+      border: 1px solid rgba(200, 169, 106, 0.1);
+      transition: transform 450ms var(--ease-luxury), border-color 450ms var(--ease-luxury), box-shadow 450ms var(--ease-luxury);
+    }
+
+    .collection-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(200, 169, 106, 0.28);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .collection-num {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .collection-card h3 {
+      font-size: 1.35rem;
       margin-bottom: 14px;
     }
 
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      color: #5b6478;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .product-body h3 {
-      font-size: 1.38rem;
-      margin-bottom: 8px;
-    }
-
-    .product-body p {
+    .collection-card p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
     }
 
-    .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 18px;
-    }
-
-    .price {
-      font-family: "Sora", sans-serif;
-      font-size: 1.18rem;
-      font-weight: 700;
-    }
-
-    .mini-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      color: #fff;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .collections {
+    /* ── Experience Flow ── */
+    .experience-layout {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .collection-tile {
-      grid-column: span 4;
-      min-height: 220px;
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(241,245,249,0.75));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
+    .experience-intro h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 24px;
+    }
+
+    .experience-intro p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-dark-muted);
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .experience-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .experience-step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 28px;
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(11, 12, 16, 0.08);
+      transition: padding-left 400ms var(--ease-luxury);
+    }
+
+    .experience-step:first-child {
+      padding-top: 0;
+    }
+
+    .experience-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .experience-step:hover {
+      padding-left: 8px;
+    }
+
+    .step-index {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .step-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    .step-content p {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-dark-muted);
+      line-height: 1.75;
+    }
+
+    /* ── Product Showcase ── */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .showcase-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      border: 1px solid rgba(200, 169, 106, 0.12);
+      transition: transform 500ms var(--ease-luxury);
+    }
+
+    .showcase-item:hover {
+      transform: scale(1.015);
+    }
+
+    .showcase-image {
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(160deg, var(--navy-light) 0%, var(--black) 100%);
       position: relative;
       overflow: hidden;
     }
 
-    .collection-tile::before {
+    .showcase-image::before {
       content: "";
       position: absolute;
-      inset: auto -12% -30% auto;
-      width: 180px;
-      height: 180px;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 80%, rgba(200, 169, 106, 0.08) 0%, transparent 60%);
+    }
+
+    .showcase-object {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border: 1px solid var(--gold-soft);
+      background: rgba(200, 169, 106, 0.04);
+    }
+
+    .showcase-item:nth-child(2) .showcase-object {
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(96,165,250,0.22), transparent 66%);
-      filter: blur(10px);
     }
 
-    .collection-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.92), rgba(34,211,238,0.8));
-      box-shadow: 0 16px 28px rgba(96,165,250,0.16);
-      margin-bottom: 26px;
-      position: relative;
+    .showcase-item:nth-child(3) .showcase-object {
+      width: 120px;
+      height: 60px;
     }
 
-    .collection-icon::before,
-    .collection-icon::after {
-      content: "";
-      position: absolute;
-      inset: 13px;
-      border-radius: 12px;
-      border: 1.5px solid rgba(255,255,255,0.75);
+    .showcase-item:nth-child(4) .showcase-object {
+      width: 80px;
+      height: 120px;
     }
 
-    .collection-icon::after {
-      inset: 18px;
-      border-radius: 9px;
+    .showcase-body {
+      padding: 28px 32px 32px;
     }
 
-    .collection-tile h3 {
-      font-size: 1.4rem;
+    .showcase-id {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
       margin-bottom: 10px;
     }
 
-    .collection-tile p {
-      color: var(--muted);
-      line-height: 1.7;
+    .showcase-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .showcase-body p {
       margin: 0;
-      max-width: 28ch;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
     }
 
-    .experience {
+    /* ── Intelligence Features ── */
+    .features-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .experience-panel {
-      min-height: 420px;
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.84), rgba(241,245,249,0.72)),
-        radial-gradient(circle at 20% 20%, rgba(96,165,250,0.16), transparent 28%);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-      padding: 28px;
-    }
-
-    .experience-panel.large {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .experience-panel.large::after {
-      content: "";
-      position: absolute;
-      inset: auto -8% -26% auto;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(34,211,238,0.22), transparent 64%);
-    }
-
-    .story-card {
-      max-width: 420px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .story-card h3 {
-      font-size: 1.95rem;
-      margin-bottom: 14px;
-    }
-
-    .story-card p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .experience-flow {
-      display: grid;
-      gap: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .flow-item {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-    }
-
-    .flow-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(96,165,250,0.92), rgba(34,211,238,0.82));
-      color: #fff;
-      font-family: "Sora", sans-serif;
-      font-size: 0.9rem;
-      flex: none;
-    }
-
-    .flow-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .flow-item span {
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.5;
-    }
-
-    .experience-panel.side {
-      display: grid;
-      align-content: center;
-      gap: 18px;
-    }
-
-    .lifestyle-vignette {
-      height: 250px;
-      border-radius: 26px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.24), rgba(255,255,255,0.72)),
-        linear-gradient(135deg, rgba(96,165,250,0.16), rgba(34,211,238,0.12));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .lifestyle-vignette::before,
-    .lifestyle-vignette::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(8px);
-    }
-
-    .lifestyle-vignette::before {
-      width: 220px;
-      height: 220px;
-      left: -30px;
-      top: -24px;
-      background: radial-gradient(circle, rgba(96,165,250,0.28), transparent 65%);
-    }
-
-    .lifestyle-vignette::after {
-      width: 160px;
-      height: 160px;
-      right: -14px;
-      bottom: -24px;
-      background: radial-gradient(circle, rgba(167,139,250,0.22), transparent 65%);
-    }
-
-    .lifestyle-panel {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: end;
-      padding-top: 10px;
-    }
-
-    .lifestyle-panel strong {
-      font-size: 1.18rem;
-      display: block;
-      margin-bottom: 6px;
-      font-family: "Sora", sans-serif;
-    }
-
-    .lifestyle-panel p {
-      color: var(--muted);
-      margin: 0;
-      max-width: 30ch;
-      line-height: 1.7;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
     .feature-card {
-      grid-column: span 4;
-      padding: 24px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
+      padding: 40px 36px;
+      background: var(--pearl);
+      border: 1px solid rgba(11, 12, 16, 0.06);
+      position: relative;
+      transition: transform 450ms var(--ease-luxury), box-shadow 450ms var(--ease-luxury);
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 36px;
+      right: 36px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+      opacity: 0;
+      transition: opacity 400ms var(--ease-luxury);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(11, 12, 16, 0.06);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
     }
 
     .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.92), rgba(34,211,238,0.8));
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    .feature-icon::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border-radius: 10px;
-      border: 1.5px solid rgba(255,255,255,0.8);
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 28px;
     }
 
     .feature-card h3 {
-      font-size: 1.26rem;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: var(--black);
+      margin-bottom: 14px;
     }
 
     .feature-card p {
       margin: 0;
-      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-dark-muted);
       line-height: 1.8;
     }
 
-    .stats-grid {
+    /* ── Testimonials ── */
+    .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .stat-card {
-      padding: 28px 22px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(241,245,249,0.78));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .stat-card strong {
-      display: block;
-      font-family: "Sora", sans-serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      margin-bottom: 8px;
-      letter-spacing: -0.05em;
-      background: linear-gradient(135deg, #0f172a, #1d4ed8 58%, #0891b2);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .stat-card span {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
     .testimonial-card {
-      grid-column: span 4;
-      padding: 24px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
+      padding: 40px 36px;
+      background: rgba(30, 42, 56, 0.5);
+      border: 1px solid rgba(200, 169, 106, 0.1);
     }
 
-    .quote-mark {
-      font-family: "Sora", sans-serif;
-      font-size: 3rem;
-      line-height: 1;
-      color: rgba(96,165,250,0.24);
-      margin-bottom: 6px;
+    .testimonial-card blockquote {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--pearl);
     }
 
-    .testimonial-card p {
-      margin: 0 0 18px;
-      color: #334155;
-      line-height: 1.85;
-      font-size: 1rem;
-    }
-
-    .person {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(96,165,250,0.92), rgba(34,211,238,0.8));
-      flex: none;
-    }
-
-    .person strong {
+    .testimonial-card cite {
       display: block;
-      font-size: 0.96rem;
-      margin-bottom: 3px;
+      margin-top: 28px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
-    .person span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .cta {
-      padding: 30px 0 0;
-    }
-
-    .cta-box {
+    /* ── CTA ── */
+    .cta-section {
+      padding: 120px 0;
+      background: linear-gradient(165deg, var(--black) 0%, var(--navy) 45%, rgba(200, 169, 106, 0.12) 100%);
       position: relative;
       overflow: hidden;
-      border-radius: 36px;
-      padding: 40px;
-      background:
-        radial-gradient(circle at 14% 12%, rgba(96,165,250,0.24), transparent 24%),
-        radial-gradient(circle at 88% 28%, rgba(34,211,238,0.24), transparent 22%),
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(241,245,249,0.84));
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      box-shadow: var(--shadow);
     }
 
-    .cta-box::before,
-    .cta-box::after {
+    .cta-section::before {
       content: "";
       position: absolute;
-      border-radius: 50%;
-      filter: blur(10px);
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(180deg, var(--gold-soft), transparent);
     }
 
-    .cta-box::before {
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(96,165,250,0.17), transparent 68%);
-      left: -60px;
-      bottom: -90px;
-    }
-
-    .cta-box::after {
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(167,139,250,0.14), transparent 68%);
-      right: -30px;
-      top: -20px;
-    }
-
-    .cta-content {
+    .cta-inner {
+      text-align: center;
       position: relative;
       z-index: 1;
-      display: flex;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 20px;
+    }
+
+    .cta-inner p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 46ch;
+      margin: 0 auto 40px;
+      line-height: 1.85;
+    }
+
+    .cta-inner .btn-group {
+      justify-content: center;
+    }
+
+    /* ── Contact ── */
+    .contact-section {
+      padding: 100px 0;
+      background: var(--pearl);
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .contact-section p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-dark-muted);
+      margin: 0 0 36px;
+    }
+
+    .contact-email {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .cta-content h2 {
-      font-size: clamp(2.3rem, 4vw, 4.2rem);
-      max-width: 10ch;
-    }
-
-    .cta-content p {
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 44ch;
-      margin: 16px 0 0;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      justify-content: flex-end;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--black);
+      border-bottom: 1px solid var(--gold-soft);
+      padding-bottom: 6px;
+      transition: color 350ms var(--ease-luxury), border-color 350ms var(--ease-luxury);
     }
 
-    .contact-grid {
+    .contact-email:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .contact-email-icon {
+      font-size: 1.1rem;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 64px 0 40px;
+      background: var(--black);
+      border-top: 1px solid rgba(200, 169, 106, 0.1);
+    }
+
+    .footer-top {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
-      align-items: start;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(248, 247, 243, 0.06);
     }
 
-    .contact-copy,
-    .contact-form {
-      border-radius: 30px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow);
-      padding: 28px;
+    .footer-brand .logo {
+      margin-bottom: 20px;
     }
 
-    .contact-copy h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-bottom: 14px;
+    .footer-tagline {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 28ch;
+      line-height: 1.6;
+      margin: 0 0 16px;
     }
 
-    .contact-copy p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin: 0 0 18px;
+    .footer-email {
+      font-size: 0.88rem;
+      color: var(--gold);
+      transition: opacity 300ms;
     }
 
-    .contact-points {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .contact-point {
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(241,245,249,0.72);
-      border: 1px solid rgba(148, 163, 184, 0.14);
-      color: #334155;
-      font-weight: 600;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #475569;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      background: rgba(248, 251, 255, 0.9);
-      color: var(--text);
-      border-radius: 16px;
-      padding: 14px 16px;
-      font: inherit;
-      outline: none;
-      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(96, 165, 250, 0.7);
-      box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.12);
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    footer {
-      padding: 48px 0 38px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr 0.9fr 0.9fr;
-      gap: 24px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(148, 163, 184, 0.2);
-    }
-
-    .footer-brand p {
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 34ch;
-      margin: 18px 0 0;
+    .footer-email:hover {
+      opacity: 0.75;
     }
 
     .footer-col h4 {
-      font-size: 1rem;
-      margin-bottom: 14px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
     }
 
-    .footer-col a,
-    .footer-col p {
+    .footer-col a {
       display: block;
-      color: var(--muted);
-      line-height: 1.9;
-      font-size: 0.96rem;
-      margin: 0;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      transition: color 300ms var(--ease-luxury);
+    }
+
+    .footer-col a:hover {
+      color: var(--pearl);
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       gap: 16px;
-      flex-wrap: wrap;
-      padding-top: 20px;
-      color: #6b7280;
-      font-size: 0.92rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .muted-label {
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      padding-top: 32px;
       font-size: 0.78rem;
-      margin-bottom: 10px;
-      display: inline-block;
+      font-weight: 300;
+      color: rgba(248, 247, 243, 0.35);
     }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-14px);
-      }
-    }
-
-    @keyframes drift {
-      0%, 100% {
-        transform: translate3d(0, 0, 0);
-      }
-      50% {
-        transform: translate3d(12px, -18px, 0);
-      }
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .experience,
-      .contact-grid,
-      .cta-content,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
       .hero-grid {
-        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 48px;
       }
 
       .hero-visual {
-        min-height: 620px;
-        order: -1;
+        max-height: 480px;
+        aspect-ratio: 16 / 10;
       }
 
-      .section-head,
-      .cta-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .cta-actions {
-        justify-content: flex-start;
-      }
-
-      .nav-links {
+      .hero-line {
         display: none;
       }
-    }
 
-    @media (max-width: 900px) {
-      .product-card,
-      .collection-tile,
-      .feature-card,
-      .testimonial-card {
-        grid-column: span 6;
-      }
-
-      .stats-grid {
+      .collections-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .form-grid {
+      .experience-layout {
         grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(100vw - 22px, 1180px);
-      }
-
+    @media (max-width: 768px) {
       .nav {
-        padding: 14px 0;
+        display: none;
       }
 
-      .brand-copy span {
-        letter-spacing: 0.08em;
+      .section {
+        padding: 80px 0;
       }
 
-      .nav-cta {
-        padding: 10px 14px;
-        font-size: 0.92rem;
-      }
-
-      .hero {
-        padding-top: 30px;
-      }
-
-      h1 {
-        font-size: clamp(2.9rem, 12vw, 4.2rem);
-      }
-
-      .hero p,
-      .section-head p,
-      .story-card p,
-      .collection-tile p,
-      .feature-card p,
-      .testimonial-card p,
-      .contact-copy p {
-        font-size: 0.98rem;
-      }
-
-      .product-card,
-      .collection-tile,
-      .feature-card,
-      .testimonial-card,
-      .contact-copy,
-      .contact-form,
-      .cta-box,
-      .experience-panel,
-      .stat-card {
-        padding: 20px;
-      }
-
-      .product-card,
-      .collection-tile,
-      .feature-card,
-      .testimonial-card {
-        grid-column: span 12;
-      }
-
-      .stats-grid {
+      .collections-grid,
+      .showcase-grid,
+      .features-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-metrics {
-        gap: 12px;
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
       }
 
-      .metric {
-        min-width: 100%;
+      .hero {
+        padding-top: 100px;
       }
 
-      .hero-visual {
-        min-height: 520px;
+      .btn-group {
+        flex-direction: column;
       }
 
-      .device-stack {
-        transform: scale(0.88);
-        transform-origin: center;
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --container: calc(100vw - 28px);
       }
 
-      .cta-box {
-        border-radius: 28px;
+      .collection-card,
+      .feature-card,
+      .testimonial-card {
+        padding: 28px 24px;
+      }
+
+      .showcase-body {
+        padding: 22px 24px 28px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Nyvrix home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-copy">Nyvrix<span>Future commerce</span></span>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Nyvrix home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Nyvrix</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#products">Products</a>
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#collections">Collections</a>
         <a href="#experience">Experience</a>
+        <a href="#objects">Objects</a>
+        <a href="#intelligence">Intelligence</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta" href="#products">Shop now</a>
+      <a class="nav-cta" href="#cta">Join Nyvrix</a>
     </div>
   </header>
 
   <main id="home">
+
+    <!-- 1. Hero -->
     <section class="hero">
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+      <div class="hero-line" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Premium tech marketplace for modern life</div>
-          <h1>Experience the Future of Digital Products</h1>
-          <p>Nyvrix curates smart devices, high-performance gadgets, and lifestyle-forward innovation into a clean premium retail experience. Explore a future-ready marketplace designed for clarity, confidence, and elevated product storytelling.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#products">Shop Collection</a>
-            <a class="button button-secondary" href="#collections">Explore Products</a>
-          </div>
-          <div class="hero-metrics" aria-label="Key highlights">
-            <div class="metric"><strong>Apple-level clarity</strong><span>Minimal design with premium product focus.</span></div>
-            <div class="metric"><strong>Glassmorphism layers</strong><span>Soft frost panels and blurred light gradients.</span></div>
+        <div class="hero-content">
+          <span class="eyebrow reveal">Adaptive Luxury Intelligence</span>
+          <h1 class="reveal reveal-d1">The Future of Intelligent Luxury Living</h1>
+          <p class="reveal reveal-d2">Nyvrix is an AI-powered lifestyle ecosystem where every product adapts to you — refining comfort, anticipating needs, and transforming your environment into a seamless extension of intelligent living.</p>
+          <div class="btn-group reveal reveal-d3">
+            <a class="btn btn-primary" href="#collections">Explore Collection</a>
+            <a class="btn btn-outline" href="#experience">Experience Nyvrix</a>
           </div>
         </div>
+        <div class="hero-visual reveal reveal-d4" aria-label="Nyvrix intelligent lifestyle visual">
+          <div class="hero-object" aria-hidden="true"></div>
+          <div class="hero-visual-inner">
+            <p class="hero-visual-tag">Intelligent Living</p>
+            <p class="hero-visual-title">"Luxury, Reimagined by Intelligence"</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-visual" aria-label="Futuristic product showcase">
-          <div class="orb one" aria-hidden="true"></div>
-          <div class="orb two" aria-hidden="true"></div>
-          <div class="device-stack">
-            <div class="glass-panel device-main">
-              <div class="screen">
-                <div class="screen-top">
-                  <span>Nyvrix OS</span>
-                  <div class="pill-row" aria-hidden="true"><span></span><span></span><span></span></div>
-                </div>
-                <div class="screen-title">
-                  <strong>Smart commerce, beautifully framed.</strong>
-                  <span>Curated devices, seamless checkout, and a calm premium browsing journey.</span>
-                </div>
+    <!-- 2. Signature Collections -->
+    <section class="section section-dark" id="collections">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Signature Collections</span>
+          <h2>Curated Systems for Intelligent Living</h2>
+          <p class="section-header-desc">Each collection represents a refined layer of adaptive luxury — designed to harmonize technology with the art of everyday living.</p>
+        </div>
+        <div class="collections-grid">
+          <article class="collection-card">
+            <span class="collection-num">01</span>
+            <h3>Nyvrix Home Intelligence System</h3>
+            <p>A unified ecosystem that learns your rhythms and orchestrates every room with quiet precision.</p>
+          </article>
+          <article class="collection-card">
+            <span class="collection-num">02</span>
+            <h3>Adaptive Smart Living Suite</h3>
+            <p>Connected objects that respond to mood, time, and presence — elevating daily rituals effortlessly.</p>
+          </article>
+          <article class="collection-card">
+            <span class="collection-num">03</span>
+            <h3>AI Personal Environment Engine</h3>
+            <p>The intelligence core that calibrates temperature, light, and atmosphere to your personal preferences.</p>
+          </article>
+          <article class="collection-card">
+            <span class="collection-num">04</span>
+            <h3>Luxury Automation Layer</h3>
+            <p>Seamless automation woven into premium design — invisible intelligence, visible refinement.</p>
+          </article>
+          <article class="collection-card">
+            <span class="collection-num">05</span>
+            <h3>Premium Digital Wellness Objects</h3>
+            <p>Thoughtfully crafted devices that nurture balance, restoration, and mindful living.</p>
+          </article>
+          <article class="collection-card">
+            <span class="collection-num">06</span>
+            <h3>Intelligent Lifestyle Devices</h3>
+            <p>Everyday essentials reimagined with adaptive AI — elegant, responsive, and enduring.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Experience Living -->
+    <section class="section section-light" id="experience">
+      <div class="container">
+        <div class="experience-layout">
+          <div class="experience-intro">
+            <span class="section-label">Experience Living</span>
+            <h2>Where Technology Becomes Lifestyle</h2>
+            <p>Nyvrix transforms your space through a continuous cycle of observation, adaptation, and refinement — creating environments that evolve with you.</p>
+          </div>
+          <div class="experience-steps">
+            <div class="experience-step">
+              <span class="step-index">01</span>
+              <div class="step-content">
+                <h3>Observe User Behavior</h3>
+                <p>Intelligent sensors quietly learn your patterns — when you wake, how you unwind, what comfort means to you.</p>
               </div>
             </div>
-            <div class="floating-card top">
-              <div class="card-chip" aria-hidden="true"></div>
-              <h4>AI-enhanced products</h4>
-              <p>Next-gen tools for productivity, living, and mobility.</p>
+            <div class="experience-step">
+              <span class="step-index">02</span>
+              <div class="step-content">
+                <h3>Adapt Environment</h3>
+                <p>Your surroundings respond in real time — lighting, climate, and ambiance shift to match your current state.</p>
+              </div>
             </div>
-            <div class="floating-card bottom">
-              <div class="card-chip" aria-hidden="true"></div>
-              <h4>Fast global delivery</h4>
-              <p>Premium fulfillment with secure checkout and support.</p>
+            <div class="experience-step">
+              <span class="step-index">03</span>
+              <div class="step-content">
+                <h3>Optimize Comfort</h3>
+                <p>Every variable is fine-tuned for your wellbeing — temperature, air quality, and acoustic balance perfected.</p>
+              </div>
+            </div>
+            <div class="experience-step">
+              <span class="step-index">04</span>
+              <div class="step-content">
+                <h3>Enhance Experience</h3>
+                <p>Beyond function, Nyvrix curates moments — ambient scenes that elevate ordinary hours into something extraordinary.</p>
+              </div>
+            </div>
+            <div class="experience-step">
+              <span class="step-index">05</span>
+              <div class="step-content">
+                <h3>Evolve Continuously</h3>
+                <p>The system grows smarter with every interaction — your lifestyle ecosystem becomes more refined over time.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="products">
+    <!-- 4. Luxury Product Showcase -->
+    <section class="section section-navy" id="objects">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Featured products</span>
-            <h2>Curated tech made to feel elevated.</h2>
-          </div>
-          <p>From intelligent wearables to productivity devices, every product is presented with the restraint and polish of a premium retail launch.</p>
+        <div class="section-header center">
+          <span class="section-label">The Collection</span>
+          <h2>Objects of Intelligent Refinement</h2>
+          <p class="section-header-desc">Each Nyvrix object is crafted as a luxury artifact — minimal in form, profound in capability.</p>
         </div>
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image"></div>
-            <div class="product-body">
-              <div class="tag-row">
-                <span class="tag">Smart Device</span>
-                <span class="tag">New</span>
-              </div>
-              <h3>Nx Core Hub</h3>
-              <p>Compact smart control for modern desks, connected living spaces, and effortless digital organization.</p>
-              <div class="price-row">
-                <span class="price">$249</span>
-                <span class="mini-button">View product</span>
-              </div>
+        <div class="showcase-grid">
+          <article class="showcase-item">
+            <div class="showcase-image">
+              <div class="showcase-object" aria-hidden="true"></div>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-id">Object N-01</span>
+              <h3>Ambient Intelligence Device</h3>
+              <p>A sculptural presence that senses, learns, and harmonizes your entire environment.</p>
             </div>
           </article>
-
-          <article class="product-card">
-            <div class="product-image"></div>
-            <div class="product-body">
-              <div class="tag-row">
-                <span class="tag">Wearable Tech</span>
-                <span class="tag">Featured</span>
-              </div>
-              <h3>Orbit One Band</h3>
-              <p>Minimal wellness-focused wearable with precise tracking, fluid interaction, and premium all-day comfort.</p>
-              <div class="price-row">
-                <span class="price">$179</span>
-                <span class="mini-button">View product</span>
-              </div>
+          <article class="showcase-item">
+            <div class="showcase-image">
+              <div class="showcase-object" aria-hidden="true"></div>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-id">Object N-02</span>
+              <h3>Adaptive Lighting System</h3>
+              <p>Light that follows the arc of your day — warm at dusk, focused at dawn, restful at night.</p>
             </div>
           </article>
-
-          <article class="product-card">
-            <div class="product-image"></div>
-            <div class="product-body">
-              <div class="tag-row">
-                <span class="tag">Future Accessory</span>
-                <span class="tag">Limited</span>
-              </div>
-              <h3>Nova Dock Pro</h3>
-              <p>Precision-designed charging dock and desk sculpture with refined utility and seamless magnetic alignment.</p>
-              <div class="price-row">
-                <span class="price">$129</span>
-                <span class="mini-button">View product</span>
-              </div>
+          <article class="showcase-item">
+            <div class="showcase-image">
+              <div class="showcase-object" aria-hidden="true"></div>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-id">Object N-03</span>
+              <h3>Smart Environment Controller</h3>
+              <p>The command center for intelligent living — elegant, intuitive, and entirely unobtrusive.</p>
+            </div>
+          </article>
+          <article class="showcase-item">
+            <div class="showcase-image">
+              <div class="showcase-object" aria-hidden="true"></div>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-id">Object N-04</span>
+              <h3>Lifestyle AI Core</h3>
+              <p>The neural heart of Nyvrix — processing, predicting, and personalizing every experience.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="collections">
+    <!-- 5. Intelligence Features -->
+    <section class="section section-light" id="intelligence">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Collections</span>
-            <h2>Explore categories with a frosted retail feel.</h2>
-          </div>
-          <p>Soft glass tiles guide shoppers into focused product families, keeping the journey simple, premium, and easy to scan.</p>
+        <div class="section-header center">
+          <span class="section-label">Intelligence</span>
+          <h2>Designed for Intelligent Living</h2>
+          <p class="section-header-desc">Nyvrix intelligence operates with the discretion of a luxury concierge — always present, never intrusive.</p>
         </div>
-        <div class="collections">
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>Smart Living</h3>
-            <p>Connected essentials designed to make homes feel calmer, brighter, and more intuitive.</p>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Predictive Lifestyle Adaptation</h3>
+            <p>Anticipates your needs before you articulate them — adjusting environments based on learned preferences and contextual signals.</p>
           </article>
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>Wearable Tech</h3>
-            <p>Elegant tools for health, movement, and a more responsive daily rhythm.</p>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Emotional Environment Calibration</h3>
+            <p>Senses the mood of a space and responds with subtle shifts in light, sound, and atmosphere to restore balance.</p>
           </article>
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>Productivity Devices</h3>
-            <p>Minimal gear that supports focus, speed, and a more refined workflow.</p>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Seamless Smart Integration</h3>
+            <p>Connects effortlessly with your existing ecosystem — unifying disparate devices into one coherent intelligent layer.</p>
           </article>
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>Future Accessories</h3>
-            <p>Thoughtful add-ons that complete the aesthetic of a modern digital life.</p>
-          </article>
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>AI-Enhanced Products</h3>
-            <p>Next-generation experiences shaped by smart assistance and adaptive performance.</p>
-          </article>
-          <article class="collection-tile">
-            <div class="collection-icon" aria-hidden="true"></div>
-            <h3>Premium Essentials</h3>
-            <p>Cleanly designed daily tools selected for quality, longevity, and impact.</p>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Real-Time Comfort Optimization</h3>
+            <p>Continuously monitors and refines every comfort variable — ensuring your environment is always at its ideal state.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <!-- 6. Testimonials -->
+    <section class="section section-dark">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Product experience</span>
-            <h2>Built like an editorial showcase.</h2>
-          </div>
-          <p>Nyvrix blends lifestyle imagery, product detail, and conversion clarity so every section feels like a premium launch page rather than a crowded catalog.</p>
+        <div class="section-header center">
+          <span class="section-label">Experience Feedback</span>
+          <h2>Voices of Intelligent Living</h2>
         </div>
-        <div class="experience">
-          <div class="experience-panel large">
-            <div class="story-card">
-              <h3>Digital commerce should feel calm, precise, and high-value.</h3>
-              <p>The interface is structured around product storytelling, with soft gradients, frosted cards, and measured spacing to keep the focus on what matters most: the product and its place in modern life.</p>
-            </div>
-            <div class="experience-flow">
-              <div class="flow-item"><div class="flow-num">1</div><div><strong>Discover</strong><span>Browse carefully curated categories without visual clutter.</span></div></div>
-              <div class="flow-item"><div class="flow-num">2</div><div><strong>Compare</strong><span>Review highlighted features, pricing, and use-case fit.</span></div></div>
-              <div class="flow-item"><div class="flow-num">3</div><div><strong>Purchase</strong><span>Move into a secure, friction-light checkout flow.</span></div></div>
-            </div>
-          </div>
-          <div class="experience-panel side">
-            <div class="lifestyle-vignette" aria-hidden="true"></div>
-            <div class="lifestyle-panel">
-              <div>
-                <strong>Designed for everyday integration</strong>
-                <p>From desk setups to connected homes, the aesthetic stays cool, premium, and product-first.</p>
-              </div>
-              <a class="mini-button" href="#contact">Talk to us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Why Nyvrix</span>
-            <h2>Precision, trust, and future-ready convenience.</h2>
-          </div>
-          <p>Every interaction is designed to feel premium and effortless, with visual hierarchy that supports both discovery and conversion.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Premium build quality</h3>
-            <p>Materials, finishes, and product curation selected to feel elevated from the first glance.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Smart integration</h3>
-            <p>Connected devices that fit naturally into modern workflows, homes, and mobility setups.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>AI-enhanced experience</h3>
-            <p>Products and journeys built around intelligence, adaptability, and smooth everyday use.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Fast global delivery</h3>
-            <p>Reliable shipping across markets with a premium fulfillment and support mindset.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Secure checkout</h3>
-            <p>Designed for confidence, clarity, and friction-light purchase completion.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Retail-grade curation</h3>
-            <p>Every collection feels intentional, limited, and relevant to the future of consumer tech.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Stats</span>
-            <h2>Signals that reinforce trust.</h2>
-          </div>
-          <p>Metrics are presented as calm, light-frost blocks so the numbers feel premium rather than loud or transactional.</p>
-        </div>
-        <div class="stats-grid">
-          <article class="stat-card"><strong>500K+</strong><span>Products sold across the Nyvrix ecosystem.</span></article>
-          <article class="stat-card"><strong>120+</strong><span>Countries reached with global delivery support.</span></article>
-          <article class="stat-card"><strong>99.8%</strong><span>Customer satisfaction across verified reviews.</span></article>
-          <article class="stat-card"><strong>24/7</strong><span>Always-on support for orders and product help.</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Testimonials</span>
-            <h2>Real feedback from premium shoppers.</h2>
-          </div>
-          <p>Short, confident reviews keep the tone editorial and believable while highlighting product quality and service.</p>
-        </div>
-        <div class="testimonial-grid">
+        <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="quote-mark">“</div>
-            <p>Nyvrix feels closer to an Apple product launch than a standard store. The product pages are calm, clean, and incredibly easy to trust.</p>
-            <div class="person"><div class="avatar" aria-hidden="true"></div><div><strong>Maya R.</strong><span>Design Director</span></div></div>
+            <blockquote>"It feels like my home understands me."</blockquote>
+            <cite>— Private Residence, Geneva</cite>
           </article>
           <article class="testimonial-card">
-            <div class="quote-mark">“</div>
-            <p>The entire experience has that premium tech-brand feeling: frosted glass, clear hierarchy, and products that actually feel desirable.</p>
-            <div class="person"><div class="avatar" aria-hidden="true"></div><div><strong>Daniel K.</strong><span>Early Adopter</span></div></div>
+            <blockquote>"Luxury and intelligence finally merged."</blockquote>
+            <cite>— Design Collective, Milan</cite>
           </article>
           <article class="testimonial-card">
-            <div class="quote-mark">“</div>
-            <p>It’s futuristic without becoming noisy. Everything about the layout makes shopping feel more polished and more intentional.</p>
-            <div class="person"><div class="avatar" aria-hidden="true"></div><div><strong>Leah S.</strong><span>Product Consultant</span></div></div>
+            <blockquote>"This is beyond smart living."</blockquote>
+            <cite>— Hospitality Group, Tokyo</cite>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section cta">
-      <div class="container">
-        <div class="cta-box">
-          <div class="cta-content">
-            <div>
-              <span class="muted-label">Call to action</span>
-              <h2>Upgrade Your Future Today</h2>
-              <p>Start exploring Nyvrix collections and bring home a refined digital commerce experience built around premium products, clean utility, and future-facing design.</p>
-            </div>
-            <div class="cta-actions">
-              <a class="button button-primary" href="#products">Start Shopping</a>
-              <a class="button button-secondary" href="#collections">View Collection</a>
-            </div>
-          </div>
+    <!-- 7. CTA -->
+    <section class="cta-section" id="cta">
+      <div class="container cta-inner">
+        <span class="section-label">Your Invitation</span>
+        <h2>Step Into Intelligent Luxury</h2>
+        <p>Discover a lifestyle ecosystem where every object adapts, every moment is refined, and intelligence becomes the new standard of luxury.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="#contact">Join Nyvrix</a>
+          <a class="btn btn-outline" href="#collections">Explore Ecosystem</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- 8. Contact -->
+    <section class="contact-section" id="contact">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="muted-label">Contact</span>
-            <h2>Talk to the Nyvrix team.</h2>
-          </div>
-          <p>A minimal frosted form keeps the experience consistent with the rest of the page while making inquiry submission feel premium and simple.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-copy">
-            <h2>Need product guidance or bulk purchasing support?</h2>
-            <p>Reach out for recommendations, partnership questions, or more information about the latest collections and delivery options.</p>
-            <div class="contact-points">
-              <div class="contact-point">Fast product recommendations based on your category interest.</div>
-              <div class="contact-point">Support for smart devices, accessories, and lifestyle electronics.</div>
-              <div class="contact-point">Global commerce assistance for premium customers.</div>
-            </div>
-          </div>
-         
-        </div>
+        <h2>Connect With Nyvrix</h2>
+        <p>For inquiries about our intelligent lifestyle ecosystem</p>
+        <a class="contact-email" href="mailto:contact@nyvrix.store">
+          <span class="contact-email-icon" aria-hidden="true">&#9993;</span>
+          contact@nyvrix.store
+        </a>
       </div>
     </section>
+
   </main>
 
-  <footer>
+  <!-- 9. Footer -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <a class="brand" href="#home">
-            <span class="brand-mark" aria-hidden="true"></span>
-            <span class="brand-copy">Nyvrix<span>Future commerce</span></span>
+          <a class="logo" href="#home">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">Nyvrix</span>
           </a>
-          <p>Futuristic commerce for smart devices, premium gadgets, and next-generation lifestyle tools.</p>
+          <p class="footer-tagline">Where elegance meets intelligence — adaptive luxury for the modern life.</p>
+          <a class="footer-email" href="mailto:contact@nyvrix.store">contact@nyvrix.store</a>
         </div>
         <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="#products">Featured products</a>
+          <h4>Explore</h4>
           <a href="#collections">Collections</a>
-          <a href="#experience">Product experience</a>
+          <a href="#objects">Objects</a>
+          <a href="#experience">Experience</a>
+          <a href="#intelligence">Intelligence</a>
         </div>
         <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#contact">Contact us</a>
-          <a href="#">Shipping</a>
-          <a href="#">Returns</a>
-        </div>
-        <div class="footer-col">
-          <h4>Brand</h4>
-          <p>nyvrix.store</p>
-          <p>Premium digital commerce ecosystem</p>
+          <h4>Connect</h4>
+          <a href="#contact">Contact</a>
+          <a href="#cta">Join Nyvrix</a>
+          <a href="mailto:contact@nyvrix.store">Email Us</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Nyvrix. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Instagram</a>
-        </div>
+        <span>&copy; 2026 Nyvrix. All rights reserved.</span>
+        <span>nyvrix.store</span>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
